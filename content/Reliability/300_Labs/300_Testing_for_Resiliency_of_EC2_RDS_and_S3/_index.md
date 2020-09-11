@@ -53,10 +53,6 @@ The skills you learn will help you build resilient workloads in alignment with t
 
 NOTE: You will be billed for any applicable AWS resources used if you complete this lab that are not covered in the [AWS Free Tier](https://aws.amazon.com/free/).
 
-## Note:
-
-This 300 level lab covers multiple failure injection scenarios. If you would prefer a simpler 200 level lab that demonstrates only EC2 failure injection, then see [Level 200: Testing for Resiliency of EC2 instances]({{< ref "/reliability/200_labs/200_testing_for_resiliency_of_ec2" >}}). This 300 level lab here includes everything in the 200 level lab, plus additional fault simulations.
-
 ## Additional lab resources:
 
 * [Troubleshooting Guide]({{% ref "/Reliability/300_Labs/300_Testing_for_Resiliency_of_EC2_RDS_and_S3/TroubleShooting_Guide.md" %}}) for common problems encountered while deploying and conducting this lab

@@ -20,7 +20,6 @@ This hands-on lab will guide you through the steps to improve reliability of a s
 AWS Well-Architected offers _two different_ CloudFormation labs illustrating Reliability best practices. **Choose which lab you prefer (or do both)**:
 
 * This lab is a **100** lab where you will do deployment-only using an AWS CloudFormation template. You will deploy a multi-tier reliable architecture.
-* If you would prefer a more advanced lab where you create and modify CloudFormation, please see the **200** level lab [Deploy and Update CloudFormation]({{< ref "200_Deploy_and_Update_CloudFormation">}}). Because the **200** lab includes modification and update as part of the exercise, it uses a simplified, single-tier, non-reliable architecture.
 
 The skills you learn will help you build resilient workloads in alignment with the [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/) best practices for reliability:
 

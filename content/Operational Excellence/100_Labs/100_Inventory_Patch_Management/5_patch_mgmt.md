@@ -47,7 +47,6 @@ Patch Manager uses **patch baselines**, which include rules for auto-approving p
 If an approved patch is reported as missing, the option you choose in **Compliance reporting**, such as `Critical` or `Medium`, determines the severity of the compliance violation reported in System Manager **Compliance**.
 
 5. In the **Patch exceptions** section in the **Rejected patches - optional** text box, enter `system-release.*` This will [reject patches](https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html) to new Amazon Linux releases that may advance you beyond the [Patch Manager supported operating systems](https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-supported-oses.html) prior to your testing new releases.
-1. For Linux operating systems, you can optionally define an [alternative patch source repository]( https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-how-it-works-alt-source-repository.html). Choose the **X** in the **Patch sources** area to remove the empty patch source definition.
 1. Choose **Create patch baseline** and you will go to the **Patch Baselines** page where the AWS provided default patch baselines, and your custom baseline, are displayed.
 
 
@@ -143,10 +142,10 @@ The remaining Run Command features enable you to:
 1. In the **Run a command** window, under **Command document**:
    1. Choose the search icon, select `Platform types`, and then choose `Linux` to display all the available commands that can be applied to Linux instances.
    1. Choose **AWS-RunPatchBaseline** in the list.
+1. In the **Command parameters** section, change the **Operation** value to **Install**.
 1. In the **Targets** section:
    1. Under **Specify targets by**, choose **Specifying a tag** to reveal the **Tags** sub-section.
    1. Under **Enter a tag key**, enter `Workload` and under **Enter a tag value** enter `Test`.
-1. In the **Command parameters** section, change the **Operation** value to **Install**.
 1. In the **Targets** section, choose **Specify a tag** using `Workload` and `Test`.
 >**Note** You could have choosen **Manually selecting instances** and used the check box at the top of the list to select all instances displayed, or selected them individually.
 
