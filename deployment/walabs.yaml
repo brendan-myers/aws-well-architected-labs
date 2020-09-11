@@ -16,7 +16,7 @@ Parameters:
   GitHubRepoName:
     Description: Github repository URL
     Type: String
-    Default: "https://github.com/awslabs/aws-well-architected-labs"
+    Default: "https://github.com/brendan-myers/aws-well-architected-labs"
   HugoVersion:
     Description: Version of Hugo to deploy
     Type: String
