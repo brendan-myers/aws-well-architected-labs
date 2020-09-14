@@ -46,5 +46,5 @@ pre: "<b>3. </b>"
 
 * This an example architecture of the cloud infrastructure necessary for reliable workloads
 * Addition of dynamic auto scaling would further improve reliability
-* Reliability also depends on software architecture, network configuration, operational excellence, and testing (especially [Chaos Engineering]({{<ref "300_Testing_for_Resiliency_of_EC2_RDS_and_S3" >}}) which tests resilience), which are outside the scope of this lab. 
+* Reliability also depends on software architecture, network configuration, operational excellence, and testing (especially Chaos Engineering which tests resilience), which are outside the scope of this lab. 
   * Without best practices for all of these, which can be found in the Reliability pillar of the [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/), the workload will not achieve high reliability goals.
