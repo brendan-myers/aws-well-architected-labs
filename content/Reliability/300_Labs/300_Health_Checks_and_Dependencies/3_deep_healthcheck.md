@@ -68,23 +68,29 @@ Choose _one_ of the options below (**Option 1 - Expert** or **Option 2 - Assiste
 
 #### 3.4.1 Make and deploy your changes to the code
 
-This option requires you have access to place a file in a location accessible via https/https via a URL. For example a public readable S3 bucket, [gist](https://gist.github.com) (use the **raw** option to get the URL), or your private webserver.
+1. The new server code including error handling [can be viewed here](/Reliability/300_Health_Checks_and_Dependencies/Code/Python/server_healthcheck.py)
+1. Search for `Healthcheck request` in the comments. What will this code do now if called on this health check URL?
 
-1. Start the existing server code that you added error handling to, or alternatively download the lab sample code from here: [server_errorhandling.py](/Reliability/300_Health_Checks_and_Dependencies/Code/Python/server_errorhandling.py)
-1. Calls to `/healthcheck` should in turn make a test call to **RecommendationService**  using _User ID_ **0**
-      * If the **RecommendationService** returns the string **test** for both _Result_ and _UserName_ then it is healthy
-      * If it is healthy then return http code 200 (OK)
-      * If it is not healthy then return http code 503 (Service Unavailable)
-      * Also return the same EC2 meta-data that is returned on the call to the `/` path
-1. Put your updated server code in a location where it can be downloaded via its URL using **wget**
-1. In the AWS Console go the **HealthCheckLab** CloudFormation stack and **Update** it:
-      * Leave **Use current template** selected and click **Next**
-      * Find the **ServerCodeUrl** parameter and enter the URL for your new code
+##### Deploy the new health check code
+
+1. Navigate to the AWS CloudFormation console
+1. Click on the **HealthCheckLab** stack
+1. Click **Update**
+1. Leave **Use current template** selected and click **Next**
+1. Find the **ServerCodeUrl** parameter and enter the following:
+
+        https://aws-well-architected-labs-ohio.s3.us-east-2.amazonaws.com/Healthcheck/Code/server_healthcheck.py
+
+1. Click **Next** until the last page
+1. At the bottom of the page, select **I acknowledge that AWS CloudFormation might create IAM resources with custom names**
+1. Click **Update stack**
+1. Click on **Events**, and click the refresh icon to observe the stack progress
+      * New EC2 instances running the error handling code are being deployed
       * When stack **status** is _CREATE_COMPLETE_ (about four minutes) then continue
 
 #### 3.4.2 Health check code
 
-This is the health check code from [server_healthcheck.py](/Reliability/300_Health_Checks_and_Dependencies/Code/Python/server_healthcheck.py). The **Option 2 - Assisted option** uses this code. If you used the **Option 1 - Expert option**, you can consult this code as a guide.
+This is the health check code from [server_healthcheck.py](/Reliability/300_Health_Checks_and_Dependencies/Code/Python/server_healthcheck.py).
 
 **Code**:
 {{% expand "Click here to see the code:" %}}
